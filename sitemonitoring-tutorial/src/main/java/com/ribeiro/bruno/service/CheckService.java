@@ -10,12 +10,16 @@ import com.ribeiro.bruno.repository.CheckRepository;
 
 @Service
 public class CheckService {
-	
+
 	@Autowired
 	private CheckRepository checkRepository;
-	
-	public List<Check> findAll(){
+
+	public List<Check> findAll() {
 		return checkRepository.findAll();
+	}
+
+	public void save(Check check) {
+		checkRepository.save(check);
 	}
 
 }
