@@ -1,15 +1,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-     <h:head>
+<h:head>
 
-     </h:head>
+</h:head>
 
-     <h:body>
+<h:body>
 
-         Managed says: #{helloController.showHello()}
+	<p:dataTable value="#{checkListController.checks}" var="check" id="checkTable">
+		
+		<p:column headerText="name">
+			#{check.name}
+		</p:column>
+		
+		<p:column headerText="url">
+			<a href="#{check.url}" target="_blank"> #{check.url} </a>
+		</p:column>
 
-     </h:body>
+	</p:dataTable>
+
+</h:body>
 </html>
