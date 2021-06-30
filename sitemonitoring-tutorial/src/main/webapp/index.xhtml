@@ -22,7 +22,7 @@
 	</p:dataTable>
 	
 	
-	<h:form>
+	<h:form id="checkForm">
 		
 		<p:panelGrid>
 		
@@ -35,7 +35,7 @@
 		
 		</p:panelGrid>
 		
-		<p:commandButton value="save" action="#{checkListController.save()}"/>
+		<p:commandButton value="save" action="#{checkListController.save()}" update="checkForm, :checkTable"/>
 	
 	</h:form>
 
