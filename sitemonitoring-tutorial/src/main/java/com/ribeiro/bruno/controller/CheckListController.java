@@ -1,10 +1,12 @@
 package com.ribeiro.bruno.controller;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
 import com.ribeiro.bruno.entity.Check;
 import com.ribeiro.bruno.service.CheckService;
@@ -15,7 +17,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @ManagedBean
-public class CheckListController {
+@ViewScoped
+public class CheckListController implements Serializable {
 	
 	@ManagedProperty("#{checkService}")
 	private CheckService checkService;
@@ -31,6 +34,7 @@ public class CheckListController {
 	
 	public void save() {
 		checkService.save(check);
+		check = new Check();
 	}
 
 }
