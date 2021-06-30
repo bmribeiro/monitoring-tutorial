@@ -22,4 +22,9 @@ public class CheckService {
 		checkRepository.save(check);
 	}
 
+	public void remove(Check check) {
+		checkRepository.delete(check);
+		
+	}
+
 }
